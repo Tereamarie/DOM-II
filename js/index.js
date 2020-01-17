@@ -37,5 +37,17 @@ myButton3.addEventListener('click', function(e) {
 //Scroll//
 
 function randomColors() {
-  const letters = ''
+  const letters = '0123456789ABCDEF';
+  let color = '#';
+  for(let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random()*16)];
+  }
+  return color;
 }
+const navLinks = document.querySelectorAll('a');
+//console.log(navLinks);
+window.addEventListener("scroll", function(e) {
+  navLinks.forEach(item =>item.style.color = randomColors());
+  e.stopPropagation();
+});
+
