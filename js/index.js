@@ -10,10 +10,19 @@ myButton1.addEventListener('mouseover', function (e) {
  
 myButton1.style.color = 'black';
  
-myButton1.style.backgroundColor = 'yellow';
+myButton1.style.backgroundColor = 'green';
  
 });
  
+// MOUSEUP//
+
+let animateBottomText = document.querySelector('.destination')
+animateBottomText.addEventListener('mouseup', () => {
+    alert('Hey you clicked on me!')
+})
+
+
+
  //Double Click//
 
 
@@ -32,6 +41,8 @@ myButton3.addEventListener('click', function(e) {
   myButton3.style.color = 'blue';
   myButton3.style.backgroundColor = 'green';
 });
+
+
 
 
 //Scroll//
@@ -53,16 +64,21 @@ window.addEventListener("scroll", function(e) {
 
 // Load //
 
-window.addEventListener('load', function (e) {
-  this.alert('Hello!Welcome to Fun Bus website.');
+window.addEventListener("load", function(event) {
+  alert("Fun Bus Adventures!!!");
 });
+
+
 
 // Resize //
 const img1 = document.getElementsByTagName('img')[0];
 //console.log(img1);//
 window.addEventListener('resize', function (e) {
   img1.style.opacity = 0.8;
-});
+})
+
+
+
 
 // Drag //
  
@@ -74,10 +90,19 @@ e.target.textContent = 'Have fun with the FUN BUS!!';
  
 });
 
-// Mouse Down //
- 
-box.addEventListener('mousedown', function (e) {
- 
-box.style.backgroundColor = 'green';
- 
+
+
+//blur//
+
+let animateForm = document.querySelector('.intro')
+animateForm.addEventListener("blur", function( event ) {
+    event.target.style.background = "black";    
+  }, true);
+
+
+  //contextMenu//
+  const img2 = document.querySelector('.img-content img');
+img2.addEventListener('contextmenu', function () {
+    img2.style.height = '300px';
+    img2.style.width = '25px';
 });
