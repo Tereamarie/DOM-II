@@ -90,21 +90,22 @@ e.target.textContent = 'Have fun with the FUN BUS!!';
  
 });
 
+//Mouseenter//
+const busImage1 = document.querySelector('.container-home')
+//console.log('bus image1', busImage)
+busImage1.addEventListener('mouseenter', () => {
+  busImage1.style.transform ="scale(1.2)";
+  busImage1.style.transition = "all 0.3s";
+})
+
+//mouse Leave//
+busImage1.addEventListener('mouseleave', () =>
+{
+  busImage1.style.transform = "scale(1)"
+});
 
 
-//blur//
-
-const intro = document.getElementById('intro');
-  intro.addEventListener('focus',
-(event) => {
-  event.target.style.background = 'pink';
-}, true);
-  intro.addEventListener('blur', (event) => {
-  event.target.style.background = '';
-}, true);
-
-
-  //contextMenu//
+//contextMenu//
   window.addEventListener('contextmenu', function (e) {
  
     e.preventDefault();
@@ -112,4 +113,6 @@ const intro = document.getElementById('intro');
     alert(' you right clicked, You win a Prize.');
      
     });
+    
+
     
