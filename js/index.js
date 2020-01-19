@@ -94,15 +94,22 @@ e.target.textContent = 'Have fun with the FUN BUS!!';
 
 //blur//
 
-let animateForm = document.querySelector('.intro')
-animateForm.addEventListener("blur", function( event ) {
-    event.target.style.background = "black";    
-  }, true);
+const intro = document.getElementById('intro');
+  intro.addEventListener('focus',
+(event) => {
+  event.target.style.background = 'pink';
+}, true);
+  intro.addEventListener('blur', (event) => {
+  event.target.style.background = '';
+}, true);
 
 
   //contextMenu//
-  const img2 = document.querySelector('.img-content img');
-img2.addEventListener('contextmenu', function () {
-    img2.style.height = '300px';
-    img2.style.width = '25px';
-});
+  window.addEventListener('contextmenu', function (e) {
+ 
+    e.preventDefault();
+     
+    alert(' you right clicked, You win a Prize.');
+     
+    });
+    
