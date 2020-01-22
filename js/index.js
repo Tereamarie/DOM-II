@@ -12,7 +12,7 @@ nav.style.background = 'green';
  
 })
  
-
+// event propagation
 
 
  //Double Click//
@@ -25,6 +25,7 @@ myButton2.addEventListener('dblclick', function(e) {
   myButton2.style.backgroundColor = 'black';
 });
 
+
 // Click //
 
 const myButton3 = document.getElementsByClassName('btn')[2];
@@ -32,6 +33,8 @@ const myButton3 = document.getElementsByClassName('btn')[2];
  myButton3.addEventListener('click', function(e) {
   myButton3.style.color = 'blue';
   myButton3.style.backgroundColor = 'green';
+  event.stopPropagation();
+  alert("you cant click")
 });
 
 
@@ -51,38 +54,15 @@ window.addEventListener("load", function(event) {
 
 
 
-// Scroll //
+// Wheel to change header to yellow
  
-function randomColors() {
+const header = document.querySelector('header')
  
-const letters = '0123456789ABCDEF';
+header.addEventListener('wheel', function() {
  
-let color = '#';
+header.style.background = 'yellow';
  
-for (let i = 0; i < 6; i++) {
- 
-color += letters[Math.floor(Math.random() * 16)];
- 
-}
- 
-return color;
- 
-}
- 
- 
- 
-const navLinks = document.querySelectorAll('a');
- 
-//console.log(navLinks);
- 
-window.addEventListener('scroll', function (e) {
- 
-navLinks.forEach(item => item.style.color = randomColors());
- 
-e.stopPropagation();
- 
-});
-
+})
 
 
 // Drag //
@@ -110,12 +90,12 @@ busImage1.addEventListener('mouseleave', () =>
 });
 
 
-//contextMenu//
-  window.addEventListener('contextmenu', function (e) {
+//contextMenu right click//
+  window.addEventListener('contextmenu', function (event) {
  
-    e.preventDefault();
+    event.preventDefault();
      
-    alert(' you right clicked, You win a Prize.');
+    alert(' you cant copy that!!.');
      
     });
     
