@@ -1,25 +1,17 @@
 // Your code goes here
 
-// Mouse Over //
- 
-const myButton1 = document.getElementsByClassName('btn')[0];
- 
-//console.log(myButton1);
- 
-myButton1.addEventListener('mouseover', function (e) {
- 
-myButton1.style.color = 'black';
- 
-myButton1.style.backgroundColor = 'green';
- 
-});
- 
-// MOUSEUP//
 
-let animateBottomText = document.querySelector('.destination')
-animateBottomText.addEventListener('mouseup', () => {
-    alert('Hey you clicked on me!')
+ 
+// Mouse up to highlight nav items green
+ 
+const nav = document.querySelector('.nav');
+ 
+nav.addEventListener('mouseup', function() {
+ 
+nav.style.background = 'green';
+ 
 })
+ 
 
 
 
@@ -37,7 +29,7 @@ myButton2.addEventListener('dblclick', function(e) {
 
 const myButton3 = document.getElementsByClassName('btn')[2];
 
-myButton3.addEventListener('click', function(e) {
+ myButton3.addEventListener('click', function(e) {
   myButton3.style.color = 'blue';
   myButton3.style.backgroundColor = 'green';
 });
@@ -45,22 +37,11 @@ myButton3.addEventListener('click', function(e) {
 
 
 
-//Scroll//
-
-function randomColors() {
-  const letters = '0123456789ABCDEF';
-  let color = '#';
-  for(let i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random()*16)];
-  }
-  return color;
-}
-const navLinks = document.querySelectorAll('a');
-//console.log(navLinks);
-window.addEventListener("scroll", function(e) {
-  navLinks.forEach(item =>item.style.color = randomColors());
-  e.stopPropagation();
-});
+// Mouse over to change text color to crimson
+const inverseText = document.querySelector('.inverse-content .text-content')
+inverseText.addEventListener('mouseover', function() {
+    inverseText.style.color = 'crimson';
+})
 
 // Load //
 
@@ -70,13 +51,37 @@ window.addEventListener("load", function(event) {
 
 
 
-// Resize //
-const img1 = document.getElementsByTagName('img')[0];
-//console.log(img1);//
-window.addEventListener('resize', function (e) {
-  img1.style.opacity = 0.8;
-})
-
+// Scroll //
+ 
+function randomColors() {
+ 
+const letters = '0123456789ABCDEF';
+ 
+let color = '#';
+ 
+for (let i = 0; i < 6; i++) {
+ 
+color += letters[Math.floor(Math.random() * 16)];
+ 
+}
+ 
+return color;
+ 
+}
+ 
+ 
+ 
+const navLinks = document.querySelectorAll('a');
+ 
+//console.log(navLinks);
+ 
+window.addEventListener('scroll', function (e) {
+ 
+navLinks.forEach(item => item.style.color = randomColors());
+ 
+e.stopPropagation();
+ 
+});
 
 
 
